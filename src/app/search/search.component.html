@@ -1,0 +1,80 @@
+<mat-toolbar class="toolbar">
+    <div class="left-side">
+        <a routerLink="/home"><mat-icon>movie</mat-icon>MovieTourApp</a>
+        <div *ngIf="userService.currentUser">
+          <button mat-raised-button><mat-icon>person</mat-icon>
+            {{userService.currentUser.email}}
+          </button>
+        </div>
+      </div>
+<div class="right-side">
+    <a routerLink="/cart"><button mat-raised-button><mat-icon>shopping_basket</mat-icon>Korpa</button></a>
+    <a routerLink="/"><button mat-raised-button><mat-icon>logout</mat-icon>Izađi</button></a>
+   </div>
+</mat-toolbar>
+<div class="wrapper">
+    <div class="left">
+        <mat-form-field appearance="outline">
+            <mat-label><mat-icon>search</mat-icon></mat-label>
+            <input matInput [(ngModel)]="search" (keyup)="searchChange()" placeholder="Unesite naziv filma" name="search">
+     </mat-form-field>
+     <p>FILMOVI(15)</p>
+     <mat-card class="card" appearance="outlined" *ngFor="let movie of filteredMovies">
+        <div class="container-card">
+            <img class="image" mat-card-image [src]="movie.slikaUrl" alt="{{movie.ime}}">
+            <div class="card-content">
+                <mat-card-title>{{movie.ime}} ({{movie.datumIzlaska}})</mat-card-title>
+                <mat-card-subtitle>Žanr: {{ movie.zanr }}</mat-card-subtitle>
+                <p>{{movie.trajanje}}</p>
+                <p>{{movie.opis}}</p>
+                <p>Datum prikazivanja: {{movie.datumPrikazivanja | date: 'dd.MM.yyyy'}}</p>
+                <p>Režiser: {{movie.reziser}}</p>
+                <p>Glumci: {{movie.glumci.join(', ')}}</p>
+                <p><mat-icon>star</mat-icon>{{movie.recenzijeKorisnika}}</p>
+                <p>Cena karte: {{movie.cenaKarte}}</p>
+                <button mat-raised-button (click)="reserveMovie(movie)"> Rezerviši</button>
+            </div>
+        </div>
+     </mat-card>
+ </div>
+ <div class="right">
+    <form>
+        <p class="filter">Filter<mat-icon>filter_list</mat-icon></p>
+        <mat-chip-set aria-label="Genre selection">
+            <mat-chip *ngFor="let genre of getsearchGenre" (click)="onGenre(genre)">{{genre}}</mat-chip>
+        </mat-chip-set>
+        <mat-divider></mat-divider>
+        <mat-form-field>
+            <mat-label>Pretraga režisera</mat-label>
+            <mat-select [(ngModel)]="selectedDirector" (selectionChange)=onDirector() name="text">
+            <mat-option *ngFor="let director of directors" [value]="director">{{director}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <mat-form-field>
+            <mat-label>Pretraga glumaca</mat-label>
+            <mat-select [(ngModel)]="selectedActor" (selectionChange)=onActor() name="text">
+            <mat-option *ngFor="let actor of actors" [value]="actor">{{actor}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <p>Sortiranje</p>
+      <mat-chip-listbox class="mat-mdc-chip-set-stacked">
+        <mat-chip-option (click)="sortByPriceAsc()"> Cena Rastuce </mat-chip-option>
+        <mat-chip-option (click)="sortByPriceDesc()"> Cena Opadajuce</mat-chip-option>
+        <mat-chip-option (click)="sortByTimeAsc()"> Trajanje filma - Rastuce </mat-chip-option>
+        <mat-chip-option (click)="sortByTimeDesc()"> Trajanje filma - Opadajuce </mat-chip-option>
+        <mat-chip-option (click)="sortByDateAsc()"> Godina izlaska filma - Rastuce </mat-chip-option>
+        <mat-chip-option (click)="sortByDateDesc()"> Godina izlaska filma - Opadajuce </mat-chip-option>
+        <mat-chip-option (click)="sortByRateAsc()"> Recenzija - Rastuce </mat-chip-option>
+        <mat-chip-option (click)="sortByRateDesc()"> Recenzija - Opadajuce </mat-chip-option>
+        
+      </mat-chip-listbox>
+      <button class="style" mat-raised-button (click)="clearInput()">Obriši sve filtere</button>
+
+
+    </form>
+ </div>
+
+
+</div>

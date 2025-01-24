@@ -1,0 +1,138 @@
+.wrapper {
+    height: 100%;
+    width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    gap: 50px;
+}
+.card {
+    width: 1200px;
+    height: 410px;
+    display: flex;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    background-color: beige;
+}
+.container-card {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+}
+.image {
+    width: 300px;
+    height: 320px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.card-content > mat-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+.card-content > mat-card-subtitle {
+    font-size: 15px;
+    font-weight: bold;
+}
+.card-content > p {
+    font-size: 15px;
+    overflow: hidden;
+    word-wrap:break-word;
+    color: black;
+}
+mat-form-field {
+    width: 1200px;
+    padding-top: 10px;
+}
+p > mat-icon {
+    vertical-align: middle;
+    color: #FFD700;
+    font-size: 19px;
+    margin-left: 3px;
+}
+.toolbar {
+    background-color: #343131;
+    height: 65px;
+    display: flex;
+    color: beige;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.left-side {
+    display: flex;
+    align-items: center;
+}
+.left-side a {
+    margin-right: 20px;
+}
+.right-side {
+    display: flex;
+    align-items: center;
+}
+.right-side a {
+    margin-left: 20px;
+    font-size: 15px;
+}
+button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: #343131!important;
+    color: beige!important;
+    margin-left: 10px !important;
+}
+button mat-icon {
+    margin-right: 8px;
+}
+a {
+    color: beige !important;
+    text-decoration: none;
+    
+}
+a:hover {
+    color:black;
+}
+button > a {
+    color:#343131 !important;
+}
+.left {
+    flex: 1;
+    margin: 0 10px;
+    
+  }
+.right {
+  flex: 1;
+  margin-top: 20px;
+  
+ 
+}
+.right > form {
+  width: 500px;
+}
+.right > form > p {
+  margin-top: 20px;
+  font-size: 25px;
+}
+.right > form > mat-divider {
+  margin-top: 10px;
+ 
+}
+.right mat-form-field {
+  margin-top: 20px;
+  width: 100%;
+  
+}
+.right > form > .filter mat-icon {
+  font-size: 25px;
+  color: black;
+}
+.right >  form > .style{
+  background-color: #140606;
+  color: beige;
+  margin-top: 15px;
+}
