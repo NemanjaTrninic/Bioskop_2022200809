@@ -1,0 +1,48 @@
+.kartica {
+    width: 330px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.kartica img {
+    height: 370px;
+    width: 328px;
+}
+mat-card-content .naslov {
+    font-size: 20px;
+    font-weight: bold;
+}
+.kartica mat-card-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color:black;
+}
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    color:black;
+ 
+}
+mat-card-actions > button {
+    background-color: #140606;
+    color: white;
+    font-size: 12px;
+}
+mat-card-content > p {
+    font-size: 18px;
+}
+p > mat-icon {
+    vertical-align: middle;
+    color:#FFD700;
+    font-size: 20px;
+    margin-left: 1px;
+}
+p {
+    margin-left: 3px;
+ }

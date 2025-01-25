@@ -1,0 +1,67 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px;  
+    
+   
+    
+}
+mat-form-field {
+   width: 350px;
+  
+}
+mat-toolbar {
+    background-color:black!important; 
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a {
+    color:white !important;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+}
+.header {
+    margin-left: auto;
+    display: flex;
+}  
+.header {
+    display: flex imo !important;
+    justify-content: space-between !important;
+    margin-top: 5px;
+}
+.header  a {
+    display: flex !important;
+    align-items: center;
+    margin-right: 20px;
+}
+.header mat-icon {
+    margin-right: 5px;
+}
+button {
+    background-color:gray !important;
+    color: black !important;
+}
+mat-card {
+ width: 480px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    
+}
+mat-card-title {
+    margin-bottom: 10px;
+    color: white;
+    align-items: center;
+}
+.return {
+    color: black !important;
+    text-decoration: underline;
+}

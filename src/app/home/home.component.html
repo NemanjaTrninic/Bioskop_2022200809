@@ -1,0 +1,27 @@
+<mat-toolbar class="toolbar">
+    <div class="left-side">
+        <a routerLink="/home"><mat-icon>movie</mat-icon>MovieTourApp</a>
+        <div *ngIf="userService.currentUser">
+          <button mat-raised-button (click)="openProfile(userService.currentUser.id)"><mat-icon>person</mat-icon>
+            {{userService.currentUser.email}}
+          </button>
+        </div>
+      </div>
+  <div class="right-side">
+    <a routerLink="/search"><mat-icon>search</mat-icon></a>
+    <a routerLink="/cart"><button mat-raised-button><mat-icon>shopping_basket</mat-icon>Korpa</button></a>
+    <a routerLink="/"><button mat-raised-button><mat-icon>logout</mat-icon>Izađi</button></a>
+    
+   </div>
+  </mat-toolbar>
+  <mat-tab-group>
+      <mat-tab label="U BIOSKOPU">
+        <app-in-cinema></app-in-cinema>
+      </mat-tab>
+      <mat-tab label="PREPORUČENO">
+        <app-recomended></app-recomended>
+      </mat-tab>
+      <mat-tab label="USKORO">
+        <app-soon></app-soon>
+      </mat-tab>
+    </mat-tab-group>

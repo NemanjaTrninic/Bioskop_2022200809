@@ -1,0 +1,80 @@
+.row{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    width: 300px;
+}
+mat-icon {
+    color:  #1976d2;
+    font-size: 20px;
+    margin-right: 10px;
+    
+}
+mat-card{
+    width: 450px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid;
+
+}
+mat-form-field {
+    flex: 1;
+    margin-left: 10px;
+    width: 280px !important;
+}
+mat-form-field  > input {
+    padding: 12px;
+    font-size: 16px;
+    
+   
+    
+}
+mat-error {
+    color: #d32f2f;;
+    font-size: 14px;
+}
+.wrapper > .close{
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 40px;
+    height: 38px;
+    font-size: 16px;
+    align-items: center;
+    background-color:black !important;
+;
+    
+   
+}
+.wrapper > .edit{
+    font-size: 24px;
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color:black !important;
+    align-items: center;
+   
+}
+mat-dialog-content {
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 30px;
+}
+mat-card-subtitle {
+    color: black !important;
+    margin-right: 10px;
+}
+.wrapper > .close > mat-icon {
+    color: white ;
+    font-size: 20px;
+   
+}
+.wrapper > .edit > mat-icon{
+    color: white;
+   
+}
+.sacuvaj {
+    background-color: black !important;
+    color: white !important;
+}

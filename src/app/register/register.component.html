@@ -1,0 +1,50 @@
+<mat-toolbar>
+    <div><a routerLink="/"><mat-icon>movie</mat-icon>MovieTourApp</a></div>
+    <div class="header">
+    <div><a routerLink="/login"><mat-icon>login</mat-icon>Prijavi se</a></div>
+    </div>
+    </mat-toolbar>
+     <mat-card>
+    <mat-card-content appearance="outlined">
+    <section>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <mat-form-field>
+        <input matInput placeholder="Unesite svoje ime" ngModel name="ime" #imelInput="ngModel" required>
+        <mat-error *ngIf="imelInput.hasError('required')">Polje ne može biti prazno.</mat-error>
+    </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Unesite svoje prezime" ngModel name="prezime" #prezimeInput="ngModel" required>
+        <mat-error *ngIf="prezimeInput.hasError('required')">Polje ne može biti prazno.</mat-error>
+    </mat-form-field>
+        <mat-form-field>
+        <input matInput placeholder="Unesite svoju email adresu" ngModel name="email" #emailInput="ngModel" required>
+        <mat-error *ngIf="emailInput.hasError('required')">Polje ne može biti prazno.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="password" matInput placeholder="Unesite lozinku" ngModel name="password" required minlength="8"
+      #passInput="ngModel">
+      <mat-hint align="end">{{passInput.value?.length}} / 8 </mat-hint>
+     </mat-form-field>
+    <mat-form-field>
+        <input  matInput placeholder="Unesite adresu" ngModel name="address" required
+      #addrInput="ngModel">
+    <mat-error *ngIf="addrInput.hasError('required')">Polje ne može biti prazno.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Unesite broj telefona" ngModel name="contact" #contInput="ngModel" required>
+        <mat-error *ngIf="contInput.hasError('required')">Polje ne može biti prazno.</mat-error>
+    </mat-form-field>
+   <!--  <mat-form-field>
+        <input matInput placeholder="Datum rodjenja" [matDatepicker]="picker" ngModel name="dateBirth" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    -->   <mat-checkbox ngModel name="accept" required>Prihvatam uslove koriscenja.</mat-checkbox>
+      <button type="submit" mat-raised-button  [disabled]="f.invalid"> Registruj se</button>
+      <mat-label *ngIf="errorExists">{{errorText}}</mat-label>
+      <a href class="return" href routerLink="/login">Vrati se nazad na prijavu.</a>
+    
+    </form>
+</section>
+</mat-card-content>
+</mat-card>
